@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cx5bd063yylwe"]
+
+[ext_resource type="Script" uid="uid://btl72xalwad7e" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c0p8h4r2val1n" path="res://texturas/barra.png" id="2_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(216, 20)
+
+[node name="player" type="CharacterBody2D" unique_id=635522135]
+script = ExtResource("1_g2els")
+
+[node name="Barra" type="Sprite2D" parent="." unique_id=1066113673]
+position = Vector2(500, 180)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_g2els")
+
+[node name="collisionPlayer" type="CollisionShape2D" parent="." unique_id=209870861]
+position = Vector2(500, 180)
+shape = SubResource("RectangleShape2D_g2els")

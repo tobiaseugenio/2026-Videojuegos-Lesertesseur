@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d3jev28os7okv"]
+
+[ext_resource type="PackedScene" uid="uid://cx5bd063yylwe" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="Texture2D" uid="uid://c0fhitvyuor30" path="res://texturas/fondoVerde.jpg" id="1_w7c3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7c3h"]
+size = Vector2(54, 720)
+
+[node name="Level" type="Node2D" unique_id=705978599]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=470668962]
+position = Vector2(641, 384)
+scale = Vector2(0.89161044, 0.84081626)
+texture = ExtResource("1_w7c3h")
+
+[node name="player" parent="." unique_id=1645127029 instance=ExtResource("1_2q6dc")]
+position = Vector2(-49, 105)
+
+[node name="Borders" type="Node2D" parent="." unique_id=246476311]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1097179307]
+
+[node name="leftBorder" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1013006372]
+position = Vector2(2582, 724)
+shape = SubResource("RectangleShape2D_w7c3h")
+
+[node name="rightBorder" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1647913016]
+position = Vector2(1284, 365)
+shape = SubResource("RectangleShape2D_w7c3h")
