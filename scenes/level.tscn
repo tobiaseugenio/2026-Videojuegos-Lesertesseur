@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://d3jev28os7okv"]
 
 [ext_resource type="PackedScene" uid="uid://cx5bd063yylwe" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://cl54p5v6k7qed" path="res://scenes/level.gd" id="1_mx8sn"]
 [ext_resource type="Texture2D" uid="uid://c0fhitvyuor30" path="res://texturas/fondoVerde.jpg" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://cw8lc48fu3h5t" path="res://scenes/pelota.tscn" id="3_w8frs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7c3h"]
 size = Vector2(54, 720)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
+size = Vector2(1305, 20)
+
 [node name="Level" type="Node2D" unique_id=705978599]
+script = ExtResource("1_mx8sn")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=470668962]
 position = Vector2(641, 384)
-scale = Vector2(0.89161044, 0.84081626)
 texture = ExtResource("1_w7c3h")
 
 [node name="player" parent="." unique_id=1645127029 instance=ExtResource("1_2q6dc")]
@@ -18,12 +23,24 @@ position = Vector2(-49, 105)
 
 [node name="Borders" type="Node2D" parent="." unique_id=246476311]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1097179307]
+[node name="sideBorders" type="StaticBody2D" parent="Borders" unique_id=1097179307]
+position = Vector2(2, 0)
 
-[node name="leftBorder" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1013006372]
-position = Vector2(2582, 724)
+[node name="leftBorder" type="CollisionShape2D" parent="Borders/sideBorders" unique_id=1013006372]
+position = Vector2(0, 365)
 shape = SubResource("RectangleShape2D_w7c3h")
+debug_color = Color(0.564493, 0.544124, 0.36113957, 0.41960785)
 
-[node name="rightBorder" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1647913016]
+[node name="rightBorder" type="CollisionShape2D" parent="Borders/sideBorders" unique_id=1647913016]
 position = Vector2(1284, 365)
 shape = SubResource("RectangleShape2D_w7c3h")
+debug_color = Color(0.5647059, 0.54509807, 0.36078432, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1995188524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=801141601]
+position = Vector2(642.5, 0)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="pelota" parent="." unique_id=2034181676 instance=ExtResource("3_w8frs")]
+position = Vector2(411, 128)
