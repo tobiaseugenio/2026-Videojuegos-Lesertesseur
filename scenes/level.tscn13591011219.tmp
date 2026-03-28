@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://cl54p5v6k7qed" path="res://scenes/level.gd" id="1_mx8sn"]
 [ext_resource type="Texture2D" uid="uid://c0fhitvyuor30" path="res://texturas/fondoVerde.jpg" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://cw8lc48fu3h5t" path="res://scenes/pelota.tscn" id="3_w8frs"]
-[ext_resource type="PackedScene" uid="uid://w1re6j0twk50" path="res://scenes/blocks.tscn" id="5_2r41h"]
-[ext_resource type="Script" uid="uid://c1sn7te63lmuk" path="res://scenes/blocks.gd" id="5_ppgk2"]
-[ext_resource type="PackedScene" uid="uid://jpxbig6mmijg" path="res://scenes/hud.tscn" id="7_klq6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7c3h"]
 size = Vector2(54, 720)
@@ -25,10 +22,10 @@ position = Vector2(645, 337)
 texture = ExtResource("1_w7c3h")
 
 [node name="player" parent="." unique_id=1645127029 instance=ExtResource("1_2q6dc")]
-position = Vector2(-129, 138)
+position = Vector2(-49, 105)
 
 [node name="pelota" parent="player" unique_id=2034181676 instance=ExtResource("3_w8frs")]
-position = Vector2(-24, 72)
+position = Vector2(460, 23)
 freeze = true
 
 [node name="Borders" type="Node2D" parent="." unique_id=246476311]
@@ -57,11 +54,5 @@ shape = SubResource("RectangleShape2D_w8frs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaReset" unique_id=1051786165]
 position = Vector2(640.5, 713)
 shape = SubResource("RectangleShape2D_mx8sn")
-
-[node name="Blocks" parent="." unique_id=1476493214 instance=ExtResource("5_2r41h")]
-script = ExtResource("5_ppgk2")
-
-[node name="Control" parent="." unique_id=2024594448 instance=ExtResource("7_klq6b")]
-metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="ZonaReset" to="." method="_on_zona_reset_body_entered"]
