@@ -6,6 +6,7 @@ extends Node2D
 @export var vidasRestantes:int = 3
 
 func _ready():
+	GameManager.escenaPrincipal = self
 	var ancho_pantalla = get_viewport_rect().size.x
 	$player.global_position.x = (ancho_pantalla / 2.0)
 	$Control/CanvasLayer/FinalPartida.visible=false

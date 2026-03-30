@@ -1,28 +1,37 @@
 extends Node2D
 
 @onready var bloque_escena: PackedScene = preload("res://scenes/block.tscn")
-@export var altura_bloque = 38
-@export var separacion_y = 20
-@export var cantBloquesFila = 12
-@export var cantFilas = 3
+@export var alturaBloque = 22
+@export var separacion_y = 0
+@export var anchoDeLimitesLaterales = 15
+@export var margenDeLimitesLaterales = 100
+@export var cantFilas = 4
+@export var ancho_bloque = 80 
+var posicionInicial_x = 0
+var posicionInicial_y = 100
 
 func _ready():
+	GameManager.escenaBlocks = self
 	construirBloques()
 		
 func construirBloques():
+	var anchoDePantallaDisponible = get_viewport().size.x - (anchoDeLimitesLaterales * 2) - (margenDeLimitesLaterales * 2)
+	var cantBloquesFila = anchoDePantallaDisponible / ancho_bloque
+	var diferenciaPorRedondeo = (anchoDePantallaDisponible - (cantBloquesFila * ancho_bloque)) / 2
+	posicionInicial_x = anchoDeLimitesLaterales + margenDeLimitesLaterales + diferenciaPorRedondeo
+
 	GameManager.bloquesRestantes = cantBloquesFila * cantFilas
 	for i in range(cantFilas):
-		generar_fila_de_bloques(cantBloquesFila, (altura_bloque + separacion_y)*i)
+		generar_fila_de_bloques(cantBloquesFila, (alturaBloque + separacion_y)*i)
 
 func reset():
 	remove_child(get_node("."))
 	construirBloques()
 			
 func generar_fila_de_bloques(cantidad: int, offset_y: int):
-	var ancho_bloque = 95 
 	var espacio = 0      
-	var inicio_x = 100    
-	var inicio_y = 100 + offset_y
+	var inicio_x = posicionInicial_x
+	var inicio_y = posicionInicial_y + offset_y
 
 	for i in range(cantidad):
 		

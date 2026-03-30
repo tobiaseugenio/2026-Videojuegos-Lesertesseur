@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cw8lc48fu3h5t"]
 
-[ext_resource type="Texture2D" uid="uid://bs23474lbvsf7" path="res://texturas/pelota.png" id="1_oq35t"]
 [ext_resource type="Script" uid="uid://dm4tx1os2w55l" path="res://scenes/pelota.gd" id="1_w0e16"]
+[ext_resource type="Texture2D" uid="uid://duwo0eb3885ul" path="res://texturas/pelota_2.png" id="2_w0e16"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w0e16"]
 friction = 0.0
@@ -21,9 +21,9 @@ max_contacts_reported = 1
 script = ExtResource("1_w0e16")
 
 [node name="SpritePelota" type="Sprite2D" parent="." unique_id=1287089002]
-position = Vector2(4.7683716e-07, 4.7683716e-07)
-scale = Vector2(0.17734374, 0.17734374)
-texture = ExtResource("1_oq35t")
+position = Vector2(-0.096093416, -0.096093416)
+scale = Vector2(0.61644965, 0.61644965)
+texture = ExtResource("2_w0e16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=161417959]
 shape = SubResource("CircleShape2D_w0e16")

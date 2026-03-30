@@ -11,13 +11,14 @@ var alto_player: float
 var pelota_lanzada := false
 
 func _ready() -> void:
+	GameManager.escenaPlayer = self
 	var rect_viewport = get_viewport_rect().size
 	ancho_pantalla = rect_viewport.x
 	alto_pantalla = rect_viewport.y
 	alto_player = $Barra.get_rect().size.y * $Barra.scale.y
 
 	var altoPelota = spritePelota.get_rect().size.y * spritePelota.scale.y
-	var separacionEnY = 5
+	var separacionEnY = 10
 
 	pelota.position.x = 0
 	pelota.position.y = (-altoPelota / 2) - separacionEnY

@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://ndqtslewkgd1"]
+
+[ext_resource type="Texture2D" uid="uid://cx378jwyqad2v" path="res://texturas/logo.png" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://4q6txxblvaga" path="res://scenes/start_button_margin_container.gd" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 30.0
+expand_margin_top = 10.0
+expand_margin_right = 30.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.39308554, 0.39308554, 0.39308533, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 30.0
+expand_margin_top = 10.0
+expand_margin_right = 30.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.50534403, 0.5053441, 0.50534385, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 30.0
+expand_margin_top = 10.0
+expand_margin_right = 30.0
+expand_margin_bottom = 10.0
+
+[node name="MainMenu" type="Control" unique_id=1205883050]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2059183526]
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1643676220]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TitleMarginContainer" unique_id=760359603]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/TitleMarginContainer/HBoxContainer" unique_id=752074397]
+position = Vector2(21, 155)
+texture = ExtResource("1_ekxnf")
+
+[node name="StartButtonMarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1347319714]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/StartButtonMarginContainer" unique_id=792897453]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CanvasLayer/StartButtonMarginContainer/VBoxContainer" unique_id=1315421045]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+text = "INICIAR"
+
+[connection signal="pressed" from="CanvasLayer/StartButtonMarginContainer/VBoxContainer/StartButton" to="CanvasLayer/StartButtonMarginContainer" method="_on_start_button_pressed"]

@@ -3,7 +3,7 @@ extends CenterContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.menuReinicio = self
+	GameManager.menuPerdido = self
 	process_mode = Node.PROCESS_MODE_ALWAYS # Replace with function body.
 
 

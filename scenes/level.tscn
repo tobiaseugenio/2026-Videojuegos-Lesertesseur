@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://jpxbig6mmijg" path="res://scenes/hud.tscn" id="7_klq6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7c3h"]
-size = Vector2(54, 720)
+size = Vector2(15, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
-size = Vector2(1305, 20)
+size = Vector2(1280, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
 size = Vector2(1281, 42)
@@ -37,19 +37,19 @@ freeze = true
 position = Vector2(2, 0)
 
 [node name="leftBorder" type="CollisionShape2D" parent="Borders/sideBorders" unique_id=1013006372]
-position = Vector2(0, 365)
+position = Vector2(5.5, 365)
 shape = SubResource("RectangleShape2D_w7c3h")
 debug_color = Color(0.564493, 0.544124, 0.36113957, 0.41960785)
 
 [node name="rightBorder" type="CollisionShape2D" parent="Borders/sideBorders" unique_id=1647913016]
-position = Vector2(1284, 365)
+position = Vector2(1270.5, 365)
 shape = SubResource("RectangleShape2D_w7c3h")
 debug_color = Color(0.5647059, 0.54509807, 0.36078432, 0.41960785)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1995188524]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=801141601]
-position = Vector2(642.5, 0)
+position = Vector2(640, 2.5)
 shape = SubResource("RectangleShape2D_w8frs")
 
 [node name="ZonaReset" type="Area2D" parent="." unique_id=435057286]

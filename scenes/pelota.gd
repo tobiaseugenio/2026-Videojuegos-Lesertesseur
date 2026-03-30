@@ -21,5 +21,6 @@ func _on_body_entered(body):
 			body.resistencia -= 1
 		else:
 			body.get_parent().remove_child(body)
+			await get_tree().process_frame
 			GameManager.incrementarPuntos(body.puntos)
 			GameManager.decrementarBloquesRestantes()
